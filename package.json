@@ -11,6 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/MeganCarnaghi/Meme-Maker-2077.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,6 +20,14 @@
   "homepage": "https://github.com/MeganCarnaghi/Meme-Maker-2077#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+<<<<<<< HEAD
+    "express": "^4.17.1"
+=======
     "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+>>>>>>> 8fd3bddc7f34d1a76bbfa1f0997160f3b1b25c58
   }
 }
