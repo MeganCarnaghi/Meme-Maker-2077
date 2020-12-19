@@ -1,7 +1,2 @@
+DROP DATABASE IF EXISTS memes_db;
 CREATE DATABASE memes_db;
-
-USE memes_db;
-
-CREATE TABLE memes(
-id INT AUTO_INCREMENT PRIMARY KEY,
-meme_name VARCHAR(30),
