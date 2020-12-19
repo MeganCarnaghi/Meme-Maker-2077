@@ -1,11 +1,13 @@
 const express = require("express");
-const bodyParser = require('body-Parser');
 const app = express();
-const joi = require('Joi');
+const db = require("./models");
 
-app.get("/", function(req, res){
-    res.send("Server is up and running.");
-})
+const PORT = process.env.PORT || 3000;
+db.sequelize.sync().then(function(){
+    app.listen(PORT, function(){
+        console.log("Listening on port %s", PORT);
+    });
+});
 
 app.use(express.static("public"));
 
@@ -23,6 +25,10 @@ app.set("view engine", "handlebars");
 // const routes = require("");
 
 
-app.listen(3000, function() {
-    consle.log("Server is running on port 3000.");
-});
+// Syncing our sequelize models and then starting our express app
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+      console.log("App listening on PORT " + PORT);
+    });
+  });
+  
