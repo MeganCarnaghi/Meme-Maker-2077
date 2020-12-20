@@ -4,6 +4,6 @@ module.exports = function(sequelize, DataTypes) {
         text: DataTypes.STRING,
         //image url through cloudify
         image: DataTypes.STRING
-    })
+    });
     return Meme;
 };
