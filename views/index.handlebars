@@ -1,25 +1,537 @@
-<div class="container-fluid" width='100%'>
-    <div class="row mb-5">
-        <div class="col text-center">
-            <h1>Meme Girl Squad</h1>
-            <img src="/assets/img/cuteMeme.png" alt="Meme" width="300px">
-            <h5>Meme me!</h5>
-        </div>
-    </div>
+<div class-"container">
 
-    <!-- Start of Meme Card -->
-    <div>
-        <div class="card mb-3">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Enter Your Meme Text Here:</h5>
-                <form>
-                    <div class="mb-3">
-                        <input type="text" class="form-control">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
+    <main>
+        <!-- Header Start -->
+        <header class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto header">
+                    <h1 class="fw-light">Meme Generator</h1>
+                    <p class="lead text-muted">Select an image below to get started creating your meme.</p>
+                    <button type="button" class="btn btn-dark mainButtons"><a href="/memePage.html">Meme
+                            Page</a></button>
+                </div>
             </div>
+        </header>
+        <!-- Header End -->
+
+        <!-- Thumbnails for the Modals -->
+        <div class="album py-5">
+            <div class="container">
+
+                <div class="row">
+                    <!-- Thumbnail 1 -->
+                    <div class="col-sm-4">
+                        <div class="card shadow-sm">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                src="https://res.cloudinary.com/opepope/image/upload/v1608260056/memes/bettywhite_katyrb.jpg" />
+
+                            <div class="card-body">
+                                <h2 class="card-text">Betty White <Meme></Meme>
+                                </h2>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop1">
+                                            View
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thumbnail 2  -->
+                    <div class="col-sm-4">
+                        <div class="card shadow-sm">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                src="https://res.cloudinary.com/opepope/image/upload/v1608259670/memes/orangetrump_p7ck73.jpg"
+                                onclick="openLightbox();" />
+
+                            <div class="card-body">
+                                <h2 class="card-text">Meme Title</h2>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop2">
+                                            View
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thumbnail 3  -->
+                    <div class="col-sm-4">
+                        <div class="card shadow-sm">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                src="https://res.cloudinary.com/opepope/image/upload/v1608258851/memes/redheadkid_c7ub6a.jpg"
+                                onclick="openLightbox();" />
+
+                            <div class="card-body">
+                                <h2 class="card-text">Meme Title</h2>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop3">
+                                            View
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thumbnail 4  -->
+                    <div class="col-sm-4"">
+                <div class=" card shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
+                            onclick="openLightbox();" />
+
+                        <div class="card-body">
+                            <h2 class="card-text">Meme Title</h2>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop4">
+                                        View
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thumbnail 5  -->
+                <div class="col-sm-4"">
+                <div class=" card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
+                        onclick="openLightbox();" />
+
+                    <div class="card-body">
+                        <h2 class="card-text">Meme Title</h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop5">
+                                    View
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thumbnail 6  -->
+            <div class="col-sm-4">
+                <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
+                        onclick="openLightbox();" />
+
+                    <div class="card-body">
+                        <h2 class="card-text">Meme Title</h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop6">
+                                    View
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thumbnail 7  -->
+            <div class="col-sm-4">
+                <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
+                        onclick="openLightbox();" />
+
+                    <div class="card-body">
+                        <h2 class="card-text">Meme Title</h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop7">
+                                    View
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thumbnail 8  -->
+            <div class="col-sm-4">
+                <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
+                        onclick="openLightbox();" />
+
+                    <div class="card-body">
+                        <h2 class="card-text">Meme Title</h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop8">
+                                    View
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thumbnail 9  -->
+            <div class="col-sm-4">
+                <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
+                        onclick="openLightbox();" />
+
+                    <div class="card-body">
+                        <h2 class="card-text">Meme Title</h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop9">
+                                    View
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thumbnail 10  -->
+            <div class="col-sm-4">
+                <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
+                        onclick="openLightbox();" />
+
+                    <div class="card-body">
+                        <h2 class="card-text">Meme Title</h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop10">
+                                    View
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thumbnail 11  -->
+            <div class="col-sm-4">
+                <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
+                        onclick="openLightbox();" />
+
+                    <div class="card-body">
+                        <h2 class="card-text">Meme Title</h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop11">
+                                    View
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thumbnail 12  -->
+            <div class="col-sm-4">
+                <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src=""
+                        onclick="openLightbox();" />
+
+                    <div class="card-body">
+                        <h2 class="card-text">Meme Title</h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary view-img" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop12">
+                                    View
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary meme-it">Meme It </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End of Thumbnails -->
+
+
+
+            <!-- Bootstrap Modal 1 -->
+            <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://res.cloudinary.com/opepope/image/upload/v1608260056/memes/bettywhite_katyrb.jpg"
+                                class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bootstrap Modal 2 -->
+            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://res.cloudinary.com/opepope/image/upload/v1608259670/memes/orangetrump_p7ck73.jpg"
+                                class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bootstrap Modal 3 -->
+            <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Modal 4 -->
+            <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Modal 5 -->
+            <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Modal 6 -->
+            <div class="modal fade" id="staticBackdrop6" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Modal 7 -->
+            <div class="modal fade" id="staticBackdrop7" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Modal 8 -->
+            <div class="modal fade" id="staticBackdrop8" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel"> Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Modal 9 -->
+            <div class="modal fade" id="staticBackdrop9" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel"> Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Modal 10 -->
+            <div class="modal fade" id="staticBackdrop10" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel"> Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Modal 11 -->
+            <div class="modal fade" id="staticBackdrop11" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel"> Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap Modal 12 -->
+            <div class="modal fade" id="staticBackdrop12" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel"> Meme Title</Meme>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" class="img-fluid" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End of Modals -->
+
+
+    </main>
+
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Back to top</a>
+            </p>
         </div>
-    </div>
-    <!-- End of Meme Card -->
+    </footer>
+</div>

@@ -1,3 +1,132 @@
+/* CSS HEX
+-- Blue for meme thumbnails: #4c58a7;
+-- Yellow: #FFE553;
+-- Teal: #2FD3CB;
+-- Light Purple: #9496FF;
+-- Pink: #2FD3CB
+-- White: #fefefeff; */
+
+/* background image */
 body {
-    color: aquamarine;
+  background-image: url("/newbg.png");
+  background-color: #252525;
+  background-repeat: repeat;
+}
+
+* {
+  font-family: "Oswald", sans-serif;
+}
+
+.curved {
+  background: #b35ba5;
+  color: #fefefe;
+  text-align: center;
+}
+
+.curved title {
+  font-size: 6rem;
+  font-family: "Molle", serif;
+  margin-top: 0;
+}
+
+.curved svg {
+  display: block;
+}
+
+/* Styling for Header */
+.header {
+  background-color: #b35ba5ff;
+}
+
+.parallax {
+  background-image: url("/newbg.png");
+  background-color: #252525;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 15rem;
+  height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #fefefe;
+  font-family: "Molle", serif;
+  font-size: 48px;
+}
+
+h2 {
+  color: #2c283f;
+  font-family: "Molle", serif;
+}
+
+p {
+  color: #2c283f;
+  font-family: "Oswald", sans-serif;
+}
+
+/* button styles */
+
+.meme-Btn {
+  background-color: #2fd3cb;
+  color: #fefefe;
+}
+
+.meme-Btn a {
+  text-decoration: none;
+  color: #fefefe;
+  background-color: #b35ba5;
+}
+#2C283F .card-body {
+  color: #2c283f;
+}
+
+.card-text {
+  color: #fefefe;
+}
+
+.submit-Btn {
+  background: #f6873e;
+}
+
+.form-control {
+  width: 75%;
+}
+
+/* Meme It Button */
+.view-img {
+  background-color: #fefefe;
+  color: #2fd3cb;
+}
+
+/* Meme It Button */
+.meme-it {
+  background-color: #2fd3cb;
+  color: #fefefe;
+}
+
+.mainButtons {
+  text-decoration: none;
+  color: white;
+  background-color: 75be4d;
+}
+
+/* card styles */
+
+.card {
+  text-decoration: none;
+  color: #fedb39;
+  background-color: #4c58a7;
+}
+
+.col-sm-4 {
+  margin-bottom: 25px;
+}
+
+/* Canvas Styling */
+#canvas {
+  width: 100%;
 }
