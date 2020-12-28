@@ -12,10 +12,14 @@ module.exports = function(app) {
 
 // Each of the below routes just handles the HTML page that the user gets sent to.
 
+
+
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/layouts/index.handlebars"));
-    res.sendFile(path.join(__dirname, "../views/layouts/memePage.handlebars"));
+    res.render('index');
+    // res.sendFile(path.join(__dirname, "../views/index.handlebars"));
+    // res.sendFile(path.join(__dirname, "../views/memePage.handlebars"));
   });
 
 };
+
