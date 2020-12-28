@@ -7,7 +7,7 @@ let topTextInput,
   canvas,
   ctx;
 
-function generatßeMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
+function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
   let fontSize;
 
   // Size canvas to image
@@ -116,3 +116,4 @@ function init() {
 }
 
 init();
+
