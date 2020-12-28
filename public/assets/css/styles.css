@@ -6,127 +6,148 @@
 -- Pink: #2FD3CB
 -- White: #fefefeff; */
 
-/* background image */
-body {
-  background-image: url("/newbg.png");
-  background-color: #252525;
-  background-repeat: repeat;
-}
-
+/* Generic Styling */
 * {
   font-family: "Oswald", sans-serif;
-}
-
-.curved {
-  background: #b35ba5;
   color: #fefefe;
-  text-align: center;
 }
 
-.curved title {
-  font-size: 6rem;
-  font-family: "Molle", serif;
-  margin-top: 0;
-}
-
-.curved svg {
-  display: block;
-}
-
-/* Styling for Header */
-.header {
-  background-color: #b35ba5ff;
-}
-
-.parallax {
-  background-image: url("/newbg.png");
+/* Styling for Background Image */
+body {
+  background-image: url("public/assets/images/newbg.png");
   background-color: #252525;
-  background-repeat: repeat;
-  display: flex;
-  flex-direction: column;
-  min-height: 15rem;
-  height: 500px;
-  background-size: cover;
-  background-attachment: fixed;
-  align-items: center;
-  justify-content: center;
+  background-repeat: cover;
 }
 
-h1 {
+/* .parallax{
+     background-image: url("/newbg.png");
+      background-color: #252525;
+      background-repeat: repeat;
+      display: flex;
+      flex-direction: column;
+      min-height: 15rem;
+      height: 500px;
+      background-size: cover;
+      background-attachment: fixed;
+      align-items: center;
+      justify-content: center;
+  } */
+
+/* logo image styling */
+.logo-img {
+  width: 100%;
+}
+
+/* Styling for Instructions on index.html*/
+.heading-text {
   color: #fefefe;
-  font-family: "Molle", serif;
-  font-size: 48px;
-}
-
-h2 {
-  color: #2c283f;
-  font-family: "Molle", serif;
-}
-
-p {
-  color: #2c283f;
   font-family: "Oswald", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
 }
 
-/* button styles */
-
-.meme-Btn {
-  background-color: #2fd3cb;
+/* Meme Title Font on Meme Thumbnails */
+h2 {
   color: #fefefe;
-}
-
-.meme-Btn a {
-  text-decoration: none;
-  color: #fefefe;
-  background-color: #b35ba5;
-}
-#2C283F .card-body {
-  color: #2c283f;
-}
-
-.card-text {
-  color: #fefefe;
-}
-
-.submit-Btn {
-  background: #f6873e;
+  font-family: "Molle", serif;
 }
 
 .form-control {
   width: 75%;
 }
 
-/* Meme It Button */
-.view-img {
+/* View and Meme It Buttons on Thumbnail and Close Button on Pop-up Modal for Thumbnail */
+.view-img,
+.meme-it,
+.close-button {
+  background-color: #2fd3cb;
+  color: #fefefe;
+  border: 1px solid #fefefe;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+}
+
+.view-img:hover,
+.meme-it:hover,
+.close-button:hover {
   background-color: #fefefe;
+  border: 1px solid #2fd3cb;
   color: #2fd3cb;
 }
 
-/* Meme It Button */
-.meme-it {
-  background-color: #2fd3cb;
-  color: #fefefe;
-}
-
+/* Meme Page Button and Home Page Button on index.html (won't need on final project)*/
 .mainButtons {
   text-decoration: none;
   color: white;
-  background-color: 75be4d;
+  background-color: #2fd3cb;
+  font-family: "Oswald", sans-serif;
 }
 
-/* card styles */
-
+/* Card Styles for Image Thumbnails on index.html */
 .card {
-  text-decoration: none;
-  color: #fedb39;
   background-color: #4c58a7;
+}
+
+.card-text {
+  color: #fefefe;
 }
 
 .col-sm-4 {
   margin-bottom: 25px;
 }
 
-/* Canvas Styling */
-#canvas {
+/* Back to Top Link */
+.top {
+  color: #fefefe;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.top:hover {
+  text-decoration: underline;
+  color: #fefefe;
+}
+
+/* Styling for memePage.html */
+
+/* Styling for Div Container */
+.meme-generator {
+  background-color: #4c58a7;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Styling for Text Boxes in Step 2 */
+#top,
+#bottom {
+  color: #000000;
   width: 100%;
+  margin-bottom: 10px;
+}
+
+#top-text-size-input,
+#bottom-text-size-input {
+  margin-bottom: 20px;
+}
+
+/* Styling for Generate Meme Button in Step 3 */
+#generate-btn {
+  background-color: #2fd3cb;
+  color: #fefefe;
+  border: 1px solid #fefefe;
+  border-radius: 5px;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+#generate-btn:hover {
+  background-color: #fefefe;
+  border: 1px solid #2fd3cb;
+  color: #2fd3cb;
+}
+
+/* Styling for Instruction Headings */
+.instructions {
+  margin-bottom: 40px;
 }
