@@ -1,0 +1,56 @@
+<header class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <img class="logo-img" src="public/assets/images/newlogo.png" alt="logo" />
+            <p class="heading-text">
+                Type your meme text in the box below. Click "Submit" to generate
+                your meme.
+            </p>
+            <a href="index.html" class="btn btn-dark mainButtons">Home Page</a>
+        </div>
+    </div>
+</header>
+
+<!-- Start of Meme Creator -->
+<div class="container meme-generator">
+    <div class="row align-items-start">
+        <div class="col">
+            <h2 class="instructions">Step 1: Choose a File</h2>
+            <div class="memeUpload text-center" id="memeUpload">
+                <input type="file" id="img-input" accept="image/*" />
+            </div>
+        </div>
+
+        <div class="col">
+            <h2 class="instructions">Step 2: Add Your Text</h2>
+            <div class="meme text-center" id="memecontainer">
+                <textarea id="top">Top Text</textarea>
+                Text Size:
+                <input type="range" id="top-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01" />
+                <textarea id="bottom">Bottom Text</textarea>
+                Text Size:
+                <input type="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01" />
+            </div>
+        </div>
+        <div class="col">
+            <h2 class="instructions">Step 3: Create Your Meme</h2>
+            <div class="text-center">
+                <button class="btn btn-primary" id="generate-btn">Generate Meme</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="canvas">
+    <canvas id="meme-canvas"> </canvas>
+</div>
+</div>
+<!-- End of Meme Creator -->
+
+<!-- Start of Footer -->
+<footer class="container">
+    <p class="float-end mb-1">
+        <a class="top" href="#">Back to top</a>
+    </p>
+</footer>
+<!-- End of Footer -->
