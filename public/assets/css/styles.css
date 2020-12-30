@@ -14,24 +14,26 @@
 
 /* Styling for Background Image */
 body {
-  background-image: url("/assets/images/newbg.png");
+  background-image: url("newbg.png");
   background-color: #252525;
-  background-repeat: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* .parallax{
-     background-image: url("/newbg.png");
-      background-color: #252525;
-      background-repeat: repeat;
-      display: flex;
-      flex-direction: column;
-      min-height: 15rem;
-      height: 500px;
-      background-size: cover;
-      background-attachment: fixed;
-      align-items: center;
-      justify-content: center;
-  } */
+.parallax {
+  background-image: url("/newbg.png");
+  background-color: #252525;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 15rem;
+  height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  align-items: center;
+  justify-content: center;
+}
 
 /* logo image styling */
 .logo-img {
@@ -44,12 +46,18 @@ body {
   font-family: "Oswald", sans-serif;
   font-size: 28px;
   font-weight: 400;
+  text-shadow: 2px 2px #4c58a7;
 }
 
 /* Meme Title Font on Meme Thumbnails */
 h2 {
   color: #fefefe;
   font-family: "Molle", serif;
+}
+
+/* Titles on pop-up modals */
+h5 {
+  color: #000000;
 }
 
 .form-control {
@@ -80,7 +88,14 @@ h2 {
   text-decoration: none;
   color: white;
   background-color: #2fd3cb;
+  border: 1px solid #fefefe;
   font-family: "Oswald", sans-serif;
+}
+
+.mainButtons:hover {
+  background-color: #fefefe;
+  border: 1px solid #2fd3cb;
+  color: #2fd3cb;
 }
 
 /* Card Styles for Image Thumbnails on index.html */
@@ -113,7 +128,8 @@ h2 {
 /* Styling for Div Container */
 .meme-generator {
   background-color: #4c58a7;
-  padding: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
   border-radius: 5px;
 }
 
@@ -121,7 +137,7 @@ h2 {
 #top,
 #bottom {
   color: #000000;
-  width: 100%;
+  width: 75%;
   margin-bottom: 10px;
 }
 
@@ -148,6 +164,59 @@ h2 {
 }
 
 /* Styling for Instruction Headings */
+.h2-instructions {
+  margin-bottom: 20px;
+}
+
+/* Styling for instructions divs */
 .instructions {
-  margin-bottom: 40px;
+  padding: 20px 20px 30px;
+}
+
+/* Choose File Button */
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #fefefe;
+  border-radius: 5px;
+  background-color: #2fd3cb;
+  font-size: 16px;
+  color: #fff;
+}
+
+.fileUpload:hover {
+  background-color: #fefefe;
+  border: 1px solid #2fd3cb;
+  font-size: 16px;
+  color: #2fd3cb;
+}
+
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+/* Styling for file name field next to Choose File button */
+input[type="text"]:disabled {
+  background: #fefefe;
+  color: #252525;
+}
+
+/* styling for div containing created meme */
+#canvas {
+  text-align: center;
+}
+
+#meme-canvas {
+  width: 100%;
+  padding: 20px 20px;
 }
