@@ -14,7 +14,7 @@
 
 /* Styling for Background Image */
 body {
-  background-image: url("public/assets/images/newbg.png");
+  background-image: url("/assets/images/newbg.png");
   background-color: #252525;
   background-repeat: cover;
 }
