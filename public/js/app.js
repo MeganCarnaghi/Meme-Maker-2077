@@ -77,6 +77,7 @@ function init() {
   generateBtn = document.getElementById("generate-btn");
   canvas = document.getElementById("meme-canvas");
   ctx = canvas.getContext("2d");
+  viewImgBtn = document.getElementById("meme-it");
 
   // set canvas to zero so that canvas is the user's upload size
   canvas.width = canvas.height = 0;
@@ -104,6 +105,26 @@ function init() {
     };
 
     reader.readAsDataURL(imageInput.files[0]);
+    //Create request, Add Burger button
+    $(".generateBtn").on("click", function (e) {
+      e.preventDefault();
+      const newMeme = {
+        //takes burger name from client, text box
+        userInput: $("#bottom").val().trim(),
+        // autofill /tag for user with the img input for the image chosen.
+        imageName: $("#img").val().trim(),
+      };
+
+      //POST request though AJAX
+      $.ajax("/api/memes", {
+        type: "POST",
+        data: newMeme,
+      }).then(function () {
+        //reload page for the list with new burger
+        location.reload();
+      });
+    });
+
     const newMeme = $.ajax("/api/memes", {
       type: "POST",
       data: newMeme,
@@ -115,5 +136,13 @@ function init() {
   });
 }
 
-init();
+$(".meme-it").on("click", function () {
+  e.preventDefault();
+  const id = $(this).data("id");
 
+  $.get("/api/memes/" + id, (data) => {
+    img.val(data.imageName);
+  });
+});
+
+init();
