@@ -1,14 +1,14 @@
 USE memes_db; 
 
-INSERT INTO Memes(image) VALUES ('queenmeme');
-INSERT INTO Memes(image) VALUES ('bettywhite');
-INSERT INTO Memes(image) VALUES ('bidenobama');
-INSERT INTO Memes(image) VALUES ('womanyellingcat');
-INSERT INTO Memes(image) VALUES ('oldmanatdesk_');
-INSERT INTO Memes(image) VALUES ('catroomguardian');
-INSERT INTO Memes(image) VALUES ('everywhere');
-INSERT INTO Memes(image) VALUES ('scaredcat');
-INSERT INTO Memes(image) VALUES ('maury');
-INSERT INTO Memes(image) VALUES ('willywonka');
-INSERT INTO Memes(image) VALUES ('dude_and_girlfriend');
-INSERT INTO Memes(image) VALUES ('drake');
+INSERT INTO Memes(imageName) VALUES ('queenmeme');
+INSERT INTO Memes(imageName) VALUES ('bettywhite');
+INSERT INTO Memes(imageName) VALUES ('bidenobama');
+INSERT INTO Memes(imageName) VALUES ('womanyellingcat');
+INSERT INTO Memes(imageName) VALUES ('oldmanatdesk_');
+INSERT INTO Memes(imageName) VALUES ('catroomguardian');
+INSERT INTO Memes(imageName) VALUES ('everywhere');
+INSERT INTO Memes(imageName) VALUES ('scaredcat');
+INSERT INTO Memes(imageName) VALUES ('maury');
+INSERT INTO Memes(imageName) VALUES ('willywonka');
+INSERT INTO Memes(imageName) VALUES ('dude_and_girlfriend');
+INSERT INTO Memes(imageName) VALUES ('drake');
