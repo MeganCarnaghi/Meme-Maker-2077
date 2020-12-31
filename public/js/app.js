@@ -146,3 +146,16 @@ $(".meme-it").on("click", function () {
 });
 
 init();
+
+//Function to convert the canvas file to a png file and download it
+// Download is triggered when "Download" button in step 4 is clicked
+function downloadMeme() {
+  canvas.toDataURL("image/png");
+  var gh = canvas.toDataURL("png");
+
+  var a = document.createElement("a");
+  a.href = gh;
+  a.download = "meme.png";
+
+  a.click();
+}
