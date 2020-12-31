@@ -131,6 +131,7 @@ h5 {
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
+  box-shadow: 0px 0px 8px 4px #e15e43;
 }
 
 /* Styling for Text Boxes in Step 2 */
@@ -168,7 +169,38 @@ h5 {
   margin-bottom: 20px;
 }
 
-/* Styling for instructions divs */
+/* Styling for the Step-4 Heading*/
+#step-4 {
+  padding: 20px;
+}
+
+/* Styling for instructions paragraphs in step 4 */
+#step-4-instructions {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+}
+
+/* Styling for Download Meme Button in Step 4 */
+#download-btn {
+  background-color: #2fd3cb;
+  color: #fefefe;
+  border: 1px solid #fefefe;
+  border-radius: 5px;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#download-btn:hover {
+  background-color: #fefefe;
+  border: 1px solid #2fd3cb;
+  color: #2fd3cb;
+}
+
+/* Styling for instructions divs on right-hand side */
 .instructions {
   padding: 20px 20px 30px;
 }
@@ -212,11 +244,16 @@ input[type="text"]:disabled {
 }
 
 /* styling for div containing created meme */
-#canvas {
-  text-align: center;
-}
-
 #meme-canvas {
   width: 100%;
   padding: 20px 20px;
+  text-align: center;
+}
+
+.img-fit-horizontal {
+  object-fit: cover;
+}
+
+.img-fit-vertical {
+  object-fit: cover;
 }
