@@ -39,6 +39,8 @@ SO THAT I can create my own meme and download it for saving and sharing
 GitHub Repository: https://github.com/MeganCarnaghi/Meme-Maker-2077.git  
 Deployed Application: https://meme-maker-2077.herokuapp.com/  
 
+![meme-maker](/assets/images/meme-maker.png)
+
 ## Collaborators
 
 * [bjsmak](https://github.com/bjsmak)
