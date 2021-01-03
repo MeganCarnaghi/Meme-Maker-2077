@@ -14,7 +14,7 @@
 
 /* Styling for Background Image */
 .parallax {
-  background-image: url("/assets/images/newbg.png");
+  background-image: url("/newbg.png");
   background-color: #252525;
   height: 100%;
   background-attachment: fixed;
@@ -137,6 +137,12 @@ h5 {
   color: #000000;
   width: 75%;
   margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.text-size {
+  color: #fefefe;
+  font-size: 18px;
 }
 
 #top-text-size-input,
@@ -168,14 +174,13 @@ h5 {
 
 /* Styling for the Step-4 Heading*/
 #step-4 {
-  padding: 20px;
+  padding-top: 20px;
 }
 
 /* Styling for instructions paragraphs in step 4 */
 #step-4-instructions {
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 16px;
+  margin-right: 30px;
+  font-size: 18px;
 }
 
 /* Styling for Download Meme Button in Step 4 */
@@ -187,7 +192,7 @@ h5 {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   padding: 5px 10px;
-  margin: 20px 20px;
+  margin-bottom: 20px;
   visibility: hidden;
 }
 
@@ -227,6 +232,7 @@ input[type="file"] {
   text-align: center;
   font-size: 16px;
   padding: 5px 10px;
+  margin-bottom: 5px;
   width: 100px;
   cursor: pointer;
 }
@@ -246,6 +252,14 @@ input[type="text"]:disabled {
 */
 
 /* styling for the canvas with meme */
+#meme-div {
+  text-align: center;
+  margin: 20px 20px 20px 0px;
+}
 #meme-canvas {
   width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
