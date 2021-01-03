@@ -1,3 +1,8 @@
+// When "Choose File" button is selected in step 1, add file name to span
+document.getElementById("img-input").onchange = function () {
+  document.getElementById("choose-file").value = this.value;
+};
+
 let topTextInput,
   bottomTextInput,
   topTextSizeInput,
@@ -77,7 +82,7 @@ function init() {
   generateBtn = document.getElementById("generate-btn");
   canvas = document.getElementById("meme-canvas");
   ctx = canvas.getContext("2d");
-  viewImgBtn = document.getElementById("meme-it");
+  downloadBtn = document.getElementById("download-btn");
 
   // set canvas to zero so that canvas is the user's upload size
   canvas.width = canvas.height = 0;
@@ -85,12 +90,16 @@ function init() {
   // use the filer reader API
   generateBtn.addEventListener("click", (e) => {
     e.preventDefault();
+
     let reader = new FileReader();
     // on load upload the user's image
     reader.onload = () => {
       let img = new Image();
       // image source is equal to the image that the user uploaded
       img.src = reader.result;
+
+      // Displays the "Download" button for the meme
+      downloadBtn.classList.add("visibility");
 
       // call the generate meme function to add the image and input text from user
       img.onload = () => {
@@ -105,26 +114,6 @@ function init() {
     };
 
     reader.readAsDataURL(imageInput.files[0]);
-    //Create request, Add Burger button
-    $(".generateBtn").on("click", function (e) {
-      e.preventDefault();
-      const newMeme = {
-        //takes burger name from client, text box
-        userInput: $("#bottom").val().trim(),
-        // autofill /tag for user with the img input for the image chosen.
-        imageName: $("#img").val().trim(),
-      };
-
-      //POST request though AJAX
-      $.ajax("/api/memes", {
-        type: "POST",
-        data: newMeme,
-      }).then(function () {
-        //reload page for the list with new burger
-        location.reload();
-      });
-    });
-
     const newMeme = $.ajax("/api/memes", {
       type: "POST",
       data: newMeme,
@@ -135,20 +124,6 @@ function init() {
     });
   });
 }
-
-$(".meme-it").on("click", function () {
-
-  const newMeme = {
-    //takes burger name from client, text box
-    userInput: " ",
-    // autofill /tag for user with the img input for the image chosen.
-    imageName: $(this).attr("data-img")
-  };
-alert("Clicked")
-  $.post("/api/memes", newMeme, (data) => {
-    
-  });
-});
 
 init();
 

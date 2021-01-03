@@ -83,7 +83,7 @@ h5 {
 .mainButtons:hover {
   background-color: #fefefe;
   border: 1px solid #2fd3cb;
-  color: #2fd3cb; 
+  color: #2fd3cb;
 }
 
 /* Card Styles for Image Thumbnails on index.html */
@@ -97,6 +97,15 @@ h5 {
 
 .col-sm-4 {
   margin-bottom: 25px;
+}
+
+/* Styling for thumbnail images on cards */
+.img-fit-horizontal {
+  object-fit: cover;
+}
+
+.img-fit-vertical {
+  object-fit: cover;
 }
 
 /* Back to Top Link */
@@ -163,14 +172,14 @@ h5 {
 }
 
 /* Styling for instructions paragraphs in step 4 */
-#step-4-instructions{
+#step-4-instructions {
   padding-left: 20px;
   padding-right: 20px;
   font-size: 16px;
 }
 
 /* Styling for Download Meme Button in Step 4 */
-#download-btn {
+.download {
   background-color: #2fd3cb;
   color: #fefefe;
   border: 1px solid #fefefe;
@@ -178,14 +187,18 @@ h5 {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   padding: 5px 10px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin: 20px 20px;
+  visibility: hidden;
 }
 
-#download-btn:hover {
+.download:hover {
   background-color: #fefefe;
   border: 1px solid #2fd3cb;
   color: #2fd3cb;
+}
+
+.visibility {
+  visibility: visible;
 }
 
 /* Styling for instructions divs on right-hand side */
@@ -193,36 +206,36 @@ h5 {
   padding: 20px 20px 30px;
 }
 
-/* Choose File Button */
-.fileUpload {
-  position: relative;
-  overflow: hidden;
-  margin: 10px;
-  padding: 5px 10px;
-  cursor: pointer;
-  border: 1px solid #fefefe;
-  border-radius: 5px;
-  background-color: #2fd3cb;
+/* Styling for Choose File Button */
+input[type="file"] {
+  position: absolute;
+  z-index: -1;
+  top: 15px;
+  left: 20px;
   font-size: 16px;
-  color: #fff;
+  color: #b8b8b8;
 }
-
-.fileUpload:hover {
+.button-wrap {
+  position: relative;
+}
+.button {
+  display: inline-block;
+  background-color: #2fd3cb;
+  border-radius: 5px;
+  border: 1px solid #fefefe;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px 10px;
+  width: 100px;
+  cursor: pointer;
+}
+.button:hover {
   background-color: #fefefe;
   border: 1px solid #2fd3cb;
+  font-family: "Oswald", sans-serif;
   font-size: 16px;
   color: #2fd3cb;
-}
-
-.fileUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
 }
 
 /* Styling for file name field next to Choose File button */
@@ -230,19 +243,9 @@ input[type="text"]:disabled {
   background: #fefefe;
   color: #252525;
 }
+*/
 
-/* styling for div containing created meme */
+/* styling for the canvas with meme */
 #meme-canvas {
   width: 100%;
-  padding: 20px 20px;
-  text-align: center;
-} 
-
-/* Styling for thumbnail images on cards */
-.img-fit-horizontal{
-  object-fit: cover;
-}
-
-.img-fit-vertical {
-object-fit: cover;
 }
