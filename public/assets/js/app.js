@@ -137,11 +137,16 @@ function init() {
 }
 
 $(".meme-it").on("click", function () {
-  e.preventDefault();
-  const id = $(this).data("id");
 
-  $.get("/api/memes/" + id, (data) => {
-    img.val(data.imageName);
+  const newMeme = {
+    //takes burger name from client, text box
+    userInput: " ",
+    // autofill /tag for user with the img input for the image chosen.
+    imageName: $(this).attr("data-img")
+  };
+alert("Clicked")
+  $.post("/api/memes", newMeme, (data) => {
+    
   });
 });
 
