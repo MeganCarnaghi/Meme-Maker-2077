@@ -15,7 +15,7 @@ Users can add text to the image, edit the text on the image and then download th
 
 ## User Story
 
-AS A user
+AS A user  
 I WANT to choose from a library of images or upload my own image  
 AND I WANT to add text to that image  
 SO THAT I can create my own meme and download it for saving and sharing  
