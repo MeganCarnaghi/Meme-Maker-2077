@@ -114,13 +114,19 @@ function init() {
     };
 
     reader.readAsDataURL(imageInput.files[0]);
-    const newMeme = $.ajax("/api/memes", {
-      type: "POST",
-      data: newMeme,
-    }).then(function () {
-      console.log("created new meme");
-      // Reload the page to get the updated list
-      location.reload();
+  });
+
+  $(".meme-it").on("click", function () {
+
+    const newMeme = {
+      //takes meme text from client, text box
+      userInput: " ",
+      // autofill /tag for user with the img input for the image chosen.
+      imageName: $(this).attr("data-img")
+    };
+  alert("Clicked")
+    $.post("/api/memes", newMeme, (data) => {
+  
     });
   });
 }
