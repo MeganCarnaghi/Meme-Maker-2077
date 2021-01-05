@@ -3,7 +3,7 @@ document.getElementById("img-input").onchange = function () {
   document.getElementById("choose-file").value = this.value;
 };
 
-let topTextInput, topTextSizeInput, imageInput, generateBtn, canvas, ctx;
+let topTextInput, topTextSizeInput, imageInput, generateBtn2, canvas, ctx;
 
 function generateMeme(img, bottomText, bottomTextSize) {
   let fontSize;
@@ -53,7 +53,7 @@ function init() {
   bottomTextInput = document.getElementById("bottom");
   bottomTextSizeInput = document.getElementById("bottom-text-size-input");
   imageInput = document.getElementById("img-input");
-  generateBtn = document.getElementById("generate-btn");
+  generateBtn2 = document.getElementById("generate-btn-2");
   canvas = document.getElementById("meme-canvas");
   ctx = canvas.getContext("2d");
   downloadBtn = document.getElementById("download-btn");
@@ -62,7 +62,7 @@ function init() {
   canvas.width = canvas.height = 0;
 
   // use the filer reader API
-  generateBtn.addEventListener("click", (e) => {
+  generateBtn2.addEventListener("click", (e) => {
     e.preventDefault();
     let reader = new FileReader();
     // on load upload the user's image
