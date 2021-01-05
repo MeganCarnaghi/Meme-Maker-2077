@@ -71,7 +71,7 @@ h5 {
   color: #2fd3cb;
 }
 
-/* Meme Page Button and Home Page Button on index.html (won't need on final project)*/
+/* Meme Maker Button and Home Page Button on index.html and memepage.html*/
 .mainButtons {
   text-decoration: none;
   color: white;
@@ -120,7 +120,7 @@ h5 {
   color: #fefefe;
 }
 
-/* Styling for memePage.html */
+/* Styling for memepage.html */
 
 /* Styling for Div Container */
 .meme-generator {
@@ -262,4 +262,9 @@ input[type="text"]:disabled {
   padding-top: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
+}
+
+/* Styling for the footer on the memepage */
+.footer2 {
+  padding-bottom: 75px;
 }

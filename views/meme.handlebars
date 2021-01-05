@@ -1,700 +1,88 @@
-<div class="parallax">
+<!-- Header Start -->
+<header class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto header">
+            <img class="logo-img" src="/assets/images/newlogo.png" alt="logo" />
+            <p class="heading-text">Follow the steps below to create your meme.</p>
+            <button type="button" class="btn btn-primary mainButtons"
+                onclick="location.href='views/index.handlebars'">Home</button>
+        </div>
+    </div>
+</header>
+<!-- Header End -->
 
-    <!-- Header Start -->
-    <header class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto header">
-                <img class="logo-img" src="public/assets/images/newlogo.png" alt="logo" />
-                <p class="heading-text">Select an image from below or click the Meme Maker button to upload your own
-                    image.</p>
-                <button type="button" class="btn btn-primary mainButtons"
-                    onclick="window.location.href='#meme-generator';">Meme Maker</button>
+<!-- Start of Meme Creator -->
+<div id="meme-generator" class="container mt-3 meme-generator">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="instructions">
+                        <h2 class="h2-instructions">Step 1: Upload an Image</h2>
+
+                        <div class="button-wrap">
+                            <label class="button" for="img-input">Upload File</label>
+                            <input id="img-input" type="file" accept="image/*">
+                            <input type="text" id="choose-file" placeholder="No File Selected" disabled="disabled" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="instructions">
+                        <h2 class="h2-instructions">Step 2: Add Your Text</h2>
+                        <textarea id="top">Top Text</textarea>
+                        <div class="text-size"> Text Size:
+                            <input type="range" id="top-text-size-input" min="0.05" max="0.25" value="0.15"
+                                step="0.01" /></div>
+
+                        <textarea id="bottom">Bottom Text</textarea>
+                        <div class="text-size">Text Size:
+                            <input type="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15"
+                                step="0.01" /> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="instructions">
+                        <h2 class="h2-instructions">Step 3: Create Your Meme</h2>
+                        <button class="btn btn-primary" id="generate-btn">Generate Meme</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
-    <!-- Header End -->
-
-    <!-- Thumbnails for the Modals -->
-    <div class="album py-5">
-        <div class="container">
-
+        <div class="col-sm-6">
+            <!--Nested rows within a column-->
             <div class="row">
-                <!-- Thumbnail 1 -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1608255570/memes/dude_and_girlfriend.jpg"
-                            alt="Dude and Girlfriend"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1608255570/memes/dude_and_girlfriend.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Dude &amp; Girlfriend
-                            </h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-                                        View</It>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1608255570/memes/dude_and_girlfriend.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-12">
+                    <h2 id="step-4" class="h2-instructions">Step 4: Edit &amp; Download Your Meme</h2>
+                    <div id="step-4-instructions">
+                        <p>To edit the text on your meme image after it has already been generated, use
+                            the text boxes and toggles in step 2. Then, click the "Generate Meme" button
+                            in step 3 to update your meme.</p>
+                    </div>
+                    <div id="meme-div">
+                        <canvas id="meme-canvas"> </canvas>
+                    </div>
+                    <div>
+                        <button class="btn download" id="download-btn" onclick="downloadMeme()">Download
+                            Meme</button>
                     </div>
                 </div>
 
-                <!-- Thumbnail 2  -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-vertical" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1608260056/memes/bettywhite.jpg"
-                            alt="Betty White"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1608260056/memes/bettywhite.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Betty White </h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-                                        View
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1608260056/memes/bettywhite.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail 3  -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1608259543/memes/bidenobama.jpg"
-                            alt="Biden & Obama"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1608259543/memes/bidenobama.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Biden &amp; Obama</h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
-                                        View
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1608259543/memes/bidenobama.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail 4  -->
-                <div class="col-sm-4">
-                    <div class=" card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1609694736/memes/thinking.jpg"
-                            alt="man thinking"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1609694736/memes/thinking.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Man Thinking</h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
-                                        View
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1609694736/memes/thinking.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail 5  -->
-                <div class="col-sm-4">
-                    <div class=" card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1608259162/memes/oldmanatdesk_.jpg"
-                            alt="Cool Old Man"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1608259162/memes/oldmanatdesk_.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Cool Old Man</h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop5">
-                                        View
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1608259162/memes/oldmanatdesk_.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail 6  -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1608258781/memes/catroomguardian.jpg"
-                            alt="Confused Cat"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1608258781/memes/catroomguardian.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Confused Cat</h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop6">
-                                        View
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1608258781/memes/catroomguardian.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail 7  -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1608257982/memes/everywhere.jpg"
-                            alt="Woody & Buzz"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1608257982/memes/everywhere.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Woody &amp; Buzz </h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop7">
-                                        View
-                                    </button>
-                                    <button type="button"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1608257982/memes/everywhere.jpg"
-                                        class="btn btn-sm btn-outline-secondary meme-it" data-type={{this.id}}>Meme It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail 8  -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1608256328/memes/scaredcat.jpg"
-                            alt="Scared Cat"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1608256328/memes/scaredcat.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Scared Cat</h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop8">
-                                        View
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1608256328/memes/scaredcat.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail 9  -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-vertical" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1608255633/memes/maury.jpg"
-                            alt="Maury Povich"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1608255633/memes/maury.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Maury Povich</h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop9">
-                                        View
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1608255633/memes/maury.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail 10  -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-vertical" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1608255570/memes/willywonka.jpg"
-                            alt="Willy Wonka"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1608255570/memes/willywonka.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Willy Wonka</h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop10">
-                                        View
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1608255570/memes/willywonka.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail 11  -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-vertical" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1609448507/memes/queenmeme.jpg"
-                            alt="The Queen"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1609448507/memes/queenmeme.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">The Queen</h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop11">
-                                        View
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1609448507/memes/queenmeme.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thumbnail 12  -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="https://res.cloudinary.com/opepope/image/upload/v1609694727/memes/onedoesnotsimply.jpg"
-                            alt="Ned Stark"
-                            data-img-id="https://res.cloudinary.com/opepope/image/upload/v1609694727/memes/onedoesnotsimply.jpg" />
-
-                        <div class="card-body">
-                            <h2 class="card-text">Ned Stark</h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary view-img"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop12">
-                                        View
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="https://res.cloudinary.com/opepope/image/upload/v1609694727/memes/onedoesnotsimply.jpg"
-                                        data-type={{this.id}}>Meme
-                                        It
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- End of Thumbnails -->
-
-
-
-                <!-- Bootstrap Modal 1 -->
-                <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Dude &amp; Girlfriend</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1608255570/memes/dude_and_girlfriend.jpg"
-                                    class="img-fluid" alt="Dude & Girlfriend">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Bootstrap Modal 2 -->
-                <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Betty White</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1608260056/memes/bettywhite.jpg"
-                                    class="img-fluid" alt="Betty White">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Bootstrap Modal 3 -->
-                <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Biden &amp; Obama</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1608259543/memes/bidenobama.jpg"
-                                    class="img-fluid" alt="Biden & Obama">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap Modal 4 -->
-                <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Man Thinking</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1609694736/memes/thinking.jpg"
-                                    class="img-fluid" alt="Man Thinking">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap Modal 5 -->
-                <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Cool Old Man</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1608259162/memes/oldmanatdesk_.jpg"
-                                    class="img-fluid" alt="Cool Old Man">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap Modal 6 -->
-                <div class="modal fade" id="staticBackdrop6" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Confused Cat</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1608258781/memes/catroomguardian.jpg"
-                                    class="img-fluid" alt="Confused Cat">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap Modal 7 -->
-                <div class="modal fade" id="staticBackdrop7" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Woody &amp; Buzz </Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1608257982/memes/everywhere.jpg"
-                                    class="img-fluid" alt="Woody & Buzz">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap Modal 8 -->
-                <div class="modal fade" id="staticBackdrop8" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel"> Scared Cat</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1608256328/memes/scaredcat.jpg"
-                                    class="img-fluid" alt="Scared Cat">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap Modal 9 -->
-                <div class="modal fade" id="staticBackdrop9" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel"> Maury Povich</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1608255633/memes/maury.jpg"
-                                    class="img-fluid" alt="Maury Povich">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap Modal 10 -->
-                <div class="modal fade" id="staticBackdrop10" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel"> Willy Wonka</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1608255570/memes/willywonka.jpg"
-                                    class="img-fluid" alt="Willy Wonka">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap Modal 11 -->
-                <div class="modal fade" id="staticBackdrop11" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel"> The Queen</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1609448507/memes/queenmeme.jpg"
-                                    class="img-fluid" alt="The Queen">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap Modal 12 -->
-                <div class="modal fade" id="staticBackdrop12" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel"> Ned Stark</Meme>
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="https://res.cloudinary.com/opepope/image/upload/v1609694727/memes/onedoesnotsimply.jpg"
-                                    class="img-fluid" alt="Ned Stark">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-button"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Modals -->
-
-                <!-- Start of Meme Creator -->
-                <div id="meme-generator" class="container mt-3 meme-generator">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="row align-items-center">
-                                <div class="col-12">
-                                    <div class="instructions">
-                                        <h2 class="h2-instructions">Step 1: Upload an Image</h2>
-
-                                        <div class="button-wrap">
-                                            <label class="button" for="img-input">Upload File</label>
-                                            <input id="img-input" type="file" accept="image/*">
-                                            <input type="text" id="choose-file" placeholder="No File Selected"
-                                                disabled="disabled" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col-12">
-                                    <div class="instructions">
-                                        <h2 class="h2-instructions">Step 2: Add Your Text</h2>
-                                        <textarea id="top">Top Text</textarea>
-                                        <div class="text-size"> Text Size:
-                                            <input type="range" id="top-text-size-input" min="0.05" max="0.25"
-                                                value="0.15" step="0.01" /></div>
-
-                                        <textarea id="bottom">Bottom Text</textarea>
-                                        <div class="text-size">Text Size:
-                                            <input type="range" id="bottom-text-size-input" min="0.05" max="0.25"
-                                                value="0.15" step="0.01" /> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col-12">
-                                    <div class="instructions">
-                                        <h2 class="h2-instructions">Step 3: Create Your Meme</h2>
-                                        <button class="btn btn-primary" id="generate-btn">Generate Meme</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <!--Nested rows within a column-->
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 id="step-4" class="h2-instructions">Step 4: Edit &amp; Download Your Meme</h2>
-                                    <div id="step-4-instructions">
-                                        <p>To edit the text on your meme image after it has already been generated, use
-                                            the text boxes and toggles in step 2. Then, click the "Generate Meme" button
-                                            in step 3 to update your meme.</p>
-                                    </div>
-                                    <div id="meme-div">
-                                        <canvas id="meme-canvas"> </canvas>
-                                    </div>
-                                    <div>
-                                        <button class="btn download" id="download-btn" onclick="downloadMeme()">Download
-                                            Meme</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Meme Creator -->
-
-                <!-- Start of Footer -->
-                <footer class="container">
-                    <p class="float-end mb-1">
-                        <a class="top" href="#">Back to top</a>
-                    </p>
-                </footer>
-                <!-- End of Footer -->
             </div>
+        </div>
+    </div>
+</div>
+<!-- End of Meme Creator -->
+
+<!-- Start of Footer -->
+<footer class="container">
+    <p class="float-end footer2">
+        <a class="top" href="#">Back to top</a>
+    </p>
+</footer>
+<!-- End of Footer -->
+</div>
