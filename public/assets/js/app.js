@@ -5,7 +5,7 @@ document.getElementById("img-input").onchange = function () {
 
 let topTextInput, topTextSizeInput, imageInput, generateBtn, canvas, ctx;
 
-function generateMeme(img, topText, topTextSize) {
+function generateMeme(img, bottomText, bottomTextSize) {
   let fontSize;
 
   // Size canvas to image
@@ -22,55 +22,36 @@ function generateMeme(img, topText, topTextSize) {
   ctx.strokeStyle = "black";
   ctx.textAlign = "center";
 
-  // Top text font size
-  fontSize = canvas.width * topTextSize;
+  // Bottom text font size
+  fontSize = canvas.width * bottomTextSize;
   ctx.font = fontSize + "px Impact";
   ctx.lineWidth = fontSize / 20;
 
-  // Draw top text
-  ctx.textBaseline = "top";
-  topText.split("\n").forEach(function (t, i) {
-    ctx.fillText(t.toUpperCase(), canvas.width / 2, i * fontSize, canvas.width);
-    ctx.strokeText(
-      t.toUpperCase(),
-      canvas.width / 2,
-      i * fontSize,
-      canvas.width
-    );
-  });
-
-  // Bottom text font size
-  // fontSize = canvas.width * bottomTextSize;
-  // ctx.font = fontSize + "px Impact";
-  // ctx.lineWidth = fontSize / 20;
-
   // Draw bottom text
-  // ctx.textBaseline = "bottom";
-  // bottomText
-  //   .split("\n")
-  //   .reverse()
-  //   .forEach(function (t, i) {
-  //     // .reverse() because it's drawing the bottom text from the bottom up
-  //     ctx.fillText(
-  //       t.toUpperCase(),
-  //       canvas.width / 2,
-  //       canvas.height - i * fontSize,
-  //       canvas.width
-  //     );
-  //     ctx.strokeText(
-  //       t.toUpperCase(),
-  //       canvas.width / 2,
-  //       canvas.height - i * fontSize,
-  //       canvas.width
-  //     );
-  //   });
+  ctx.textBaseline = "bottom";
+  bottomText
+    .split("\n")
+    .reverse()
+    .forEach(function (t, i) {
+      // .reverse() because it's drawing the bottom text from the bottom up
+      ctx.fillText(
+        t.toUpperCase(),
+        canvas.width / 2,
+        canvas.height - i * fontSize,
+        canvas.width
+      );
+      ctx.strokeText(
+        t.toUpperCase(),
+        canvas.width / 2,
+        canvas.height - i * fontSize,
+        canvas.width
+      );
+    });
 }
 
 function init() {
-  topTextInput = document.getElementById("top");
-  // bottomTextInput = document.getElementById("bottom");
-  topTextSizeInput = document.getElementById("top-text-size-input");
-  // bottomTextSizeInput = document.getElementById("bottom-text-size-input");
+  bottomTextInput = document.getElementById("bottom");
+  bottomTextSizeInput = document.getElementById("bottom-text-size-input");
   imageInput = document.getElementById("img-input");
   generateBtn = document.getElementById("generate-btn");
   canvas = document.getElementById("meme-canvas");
@@ -83,7 +64,6 @@ function init() {
   // use the filer reader API
   generateBtn.addEventListener("click", (e) => {
     e.preventDefault();
-
     let reader = new FileReader();
     // on load upload the user's image
     reader.onload = () => {
@@ -96,7 +76,7 @@ function init() {
 
       // call the generate meme function to add the image and input text from user
       img.onload = () => {
-        generateMeme(img, topTextInput.value, topTextSizeInput.value);
+        generateMeme(img, bottomTextInput.value, bottomTextSizeInput.value);
       };
     };
 
@@ -104,17 +84,14 @@ function init() {
   });
 
   $(".meme-it").on("click", function () {
-
     const newMeme = {
       //takes meme text from client, text box
       userInput: " ",
       // autofill /tag for user with the img input for the image chosen.
-      imageName: $(this).attr("data-img")
+      imageName: $(this).attr("data-img"),
     };
-  alert("Clicked")
-    $.post("/api/memes", newMeme, (data) => {
-  
-    });
+    alert("Clicked");
+    $.post("/api/memes", newMeme, (data) => {});
   });
 }
 
