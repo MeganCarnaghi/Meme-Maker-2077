@@ -15,7 +15,7 @@
 /* Styling for Background Image */
 html,
 .parallax {
-  background-image: url("/newbg.png");
+  background-image: url("assets/images/newbg.png");
   background-color: #252525;
   height: 100%;
   background-attachment: fixed;
@@ -159,7 +159,8 @@ h5 {
 }
 
 /* Styling for Generate Meme Button in Step 3 */
-#generate-btn {
+#generate-btn-1,
+#generate-btn-2 {
   background-color: #2fd3cb;
   color: #fefefe;
   border: 1px solid #fefefe;
@@ -169,7 +170,8 @@ h5 {
   padding: 5px 10px;
 }
 
-#generate-btn:hover {
+#generate-btn-1:hover,
+#generate-btn-2:hover {
   background-color: #fefefe;
   border: 1px solid #2fd3cb;
   color: #2fd3cb;
