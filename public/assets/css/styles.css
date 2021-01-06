@@ -14,6 +14,7 @@
 
 /* Styling for Background Image */
 html,
+body,
 .parallax {
   background-image: url("/assets/images/newbg.png");
   background-color: #252525;
