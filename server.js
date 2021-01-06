@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
 
+app.use(express.static("public"));
 
 const PORT = process.env.PORT || 3000;
 
 const db = require("./models");
 
-app.use(express.static("public"));
 
 
 // Parse application body as JSON
