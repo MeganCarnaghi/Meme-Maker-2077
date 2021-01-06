@@ -661,6 +661,31 @@
                     </div>
                 </div>
                 <!-- End of Meme Creator -->
+                <!-- TEST -->
+                {{#each meme}}
+<!-- Thumbnail 1 -->
+                <div class="col-sm-4">
+                    <div class="card shadow-sm">
+                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
+                            src="{{imageName}}"
+                            data-img-id="{{this.imageName}}" />
+
+                        <div class="card-body">
+                            <h2 class="card-text">{{userInput}}
+                            </h2>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
+                                        data-img="{{imageName}}"
+                                        data-type={{this.id}}>Download Meme
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{{/each}}
+<!--TEST END-->
                 <!-- Start of Footer -->
                 <footer class="container">
                     <p class="float-end mb-1">
