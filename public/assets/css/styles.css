@@ -143,31 +143,65 @@ h5 {
   color: #fefefe;
 }
 
-/* Styling for Div Container */
-.meme-generator {
+/* Styling for Div Container on index.html */
+.meme-generator1 {
   background-color: #4c58a7;
-  padding: 10px;
+  padding: 30px 30px;
   margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 8px 4px #e15e43;
 }
 
+/* Styling for Div Container on memepage.html */
+.meme-generator2 {
+  background-color: #4c58a7;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 4px #e15e43;
+}
+
+#col1 {
+  padding-right: 30px;
+}
+
+#col2 {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+#col3 {
+  padding-left: 30px;
+}
+
 /* Styling for instruction parapgraphs in step 1 on index.html */
+.step-1-instructions {
+  font-size: 18px;
+}
+
+/* Styling for instruction parapgraphs in step 2 on index.html */
+.step-2-instructions {
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+
+/* Styling for instruction parapgraphs in step 3 on index.html */
 .step-3-instructions {
   font-size: 18px;
+  padding-bottom: 42px;
 }
 
 /* Styling for textarea in step 1 on index.html */
 #choice {
   font-size: 18px;
-  width: 75%;
+  width: 100%;
   color: #252525;
 }
 
 /* Styling for Text Boxes in Step 2 */
 #bottom {
   color: #7a7a7a;
-  width: 75%;
+  width: 100%;
   margin-bottom: 10px;
   font-size: 18px;
 }
@@ -216,6 +250,11 @@ h5 {
   font-size: 18px;
 }
 
+/* Styling for step 4 column on memepage.html*/
+#step-4-col {
+  padding-left: 30px;
+}
+
 /* Styling for Download Meme Button in Step 4 */
 .download {
   background-color: #2fd3cb;
@@ -239,7 +278,7 @@ h5 {
   visibility: visible;
 }
 
-/* Styling for instructions divs on right-hand side */
+/* Styling for instructions divs on left-hand side */
 .instructions {
   padding: 20px 20px 30px;
 }
