@@ -1,22 +1,30 @@
-$(function(){
+$(function () {
+  $(".meme-it").on("click", function () {
+    console.log("clicked");
 
-$(".meme-it").on("click", function () {
-console.log('clicked');
-$("#choice").text($(this).attr("data-img"))
-console.log($(this).attr("data-img"));
-});
+    //Scroll to the meme generator div
+    $("html, body").animate(
+      {
+        scrollTop: $("#meme-generator").offset().top,
+      },
+      100
+    );
 
-$("#generate-btn-1").on("click", function () {
+    $("#choice").text($(this).attr("data-img"));
+    console.log($(this).attr("data-img"));
+  });
+
+  $("#generate-btn-1").on("click", function () {
     const newMeme = {
-        //takes meme text from client, text box
-        userInput: $("#bottom").val().trim(),
-        // autofill /tag for user with the img input for the image chosen.
-        imageName: $("#choice").val().trim(),
+      //takes meme text from client, text box
+      userInput: $("#bottom").val().trim(),
+      // autofill /tag for user with the img input for the image chosen.
+      imageName: $("#choice").val().trim(),
     };
-    alert("Clicked");
+    // alert("Clicked");
     $.post("/api/memes", newMeme, (data) => {});
-})
-/*const newMeme = {
+  });
+  /*const newMeme = {
 //takes meme text from client, text box
 userInput: " ",
 // autofill /tag for user with the img input for the image chosen.

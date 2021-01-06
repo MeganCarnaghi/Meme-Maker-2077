@@ -8,8 +8,7 @@
                 <p class="heading-text">Select an image from below to get started or click the Meme Maker button to
                     upload your own
                     image and create your meme.</p>
-                <button id="memeMakerBtn" type="button" class="btn"
-                    onclick="location.href='/memespage'">Meme
+                <button id="memeMakerBtn" type="button" class="btn" onclick="location.href='/memespage'">Meme
                     Maker</button>
             </div>
         </div>
@@ -643,7 +642,7 @@
                             <h2 class="h2-instructions">Step 2: Add Your Text</h2>
                             <div>
                                 <p class="step-2-instructions">Type your meme text in the box below. The text will
-                                    appear on the bottom of the meme. Use the toggle to adjust the text size.</p>
+                                    appear at the bottom of the meme. Use the toggle to adjust the text size.</p>
                             </div>
                             <textarea id="bottom">Bottom Text</textarea>
                             <div class="text-size">Text Size:
@@ -663,12 +662,11 @@
                 <!-- End of Meme Creator -->
                 <!-- TEST -->
                 {{#each meme}}
-<!-- Thumbnail 1 -->
+                <!-- Thumbnail 1 -->
                 <div class="col-sm-4">
                     <div class="card shadow-sm">
                         <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="{{imageName}}"
-                            data-img-id="{{this.imageName}}" />
+                            src="{{imageName}}" data-img-id="{{this.imageName}}" />
 
                         <div class="card-body">
                             <h2 class="card-text">{{userInput}}
@@ -676,16 +674,15 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="{{imageName}}"
-                                        data-type={{this.id}}>Download Meme
+                                        data-img="{{imageName}}" data-type={{this.id}}>Download Meme
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-{{/each}}
-<!--TEST END-->
+                {{/each}}
+                <!--TEST END-->
                 <!-- Start of Footer -->
                 <footer class="container">
                     <p class="float-end mb-1">
