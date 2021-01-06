@@ -41,7 +41,8 @@ html,
 /* Meme Title Font on Meme Thumbnails */
 h2 {
   color: #fefefe;
-  font-family: "Molle", serif;
+  font-family: "VT323", monospace;
+  font-size: 36px;
 }
 
 /* Titles on pop-up modals */
@@ -61,7 +62,7 @@ h5 {
   color: #fefefe;
   border: 1px solid #fefefe;
   font-family: "Oswald", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .view-img:hover,
@@ -72,19 +73,40 @@ h5 {
   color: #2fd3cb;
 }
 
-/* Meme Maker Button and Home Page Button on index.html and memepage.html*/
-.mainButtons {
+/* Meme Maker Button on index.html*/
+#memeMakerBtn {
   text-decoration: none;
   color: white;
-  background-color: #2fd3cb;
+  background-color: #e15e43;
   border: 1px solid #fefefe;
-  font-family: "Oswald", sans-serif;
+  font-family: "VT323", monospace;
+  font-size: 40px;
+  width: 200px;
+  margin-top: 15px;
 }
 
-.mainButtons:hover {
+#memeMakerBtn:hover {
   background-color: #fefefe;
-  border: 1px solid #2fd3cb;
-  color: #2fd3cb;
+  border: 1px solid #e15e43;
+  color: #e15e43;
+}
+
+/* Home Button on memepage.html*/
+#goHomeBtn {
+  text-decoration: none;
+  color: white;
+  background-color: #4c58a7;
+  border: 1px solid #fefefe;
+  font-family: "VT323", monospace;
+  font-size: 40px;
+  width: 200px;
+  margin-top: 15px;
+}
+
+#goHomeBtn:hover {
+  background-color: #fefefe;
+  border: 1px solid #4c58a7;
+  color: #4c58a7;
 }
 
 /* Card Styles for Image Thumbnails on index.html */
@@ -139,6 +161,7 @@ h5 {
 #choice {
   font-size: 18px;
   width: 75%;
+  color: #252525;
 }
 
 /* Styling for Text Boxes in Step 2 */
@@ -166,7 +189,7 @@ h5 {
   border: 1px solid #fefefe;
   border-radius: 5px;
   font-family: "Oswald", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   padding: 5px 10px;
 }
 
@@ -200,7 +223,7 @@ h5 {
   border: 1px solid #fefefe;
   border-radius: 5px;
   font-family: "Oswald", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   padding: 5px 10px;
   margin-bottom: 20px;
   visibility: hidden;
@@ -227,7 +250,7 @@ input[type="file"] {
   z-index: -1;
   top: 15px;
   left: 20px;
-  font-size: 16px;
+  font-size: 18px;
   color: #b8b8b8;
 }
 .button-wrap {
@@ -240,7 +263,7 @@ input[type="file"] {
   border: 1px solid #fefefe;
   color: #ffffff;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   padding: 5px 10px;
   margin-bottom: 5px;
   width: 100px;
@@ -250,7 +273,6 @@ input[type="file"] {
   background-color: #fefefe;
   border: 1px solid #2fd3cb;
   font-family: "Oswald", sans-serif;
-  font-size: 16px;
   color: #2fd3cb;
 }
 
