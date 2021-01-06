@@ -17,8 +17,12 @@ module.exports = function(app) {
   // index route loads view.html
   app.get("/", function(req, res) {
     res.render('index');
-    res.render('meme');
+    // res.sendFile(path.join(__dirname, "../views/index.handlebars"));
+    // res.sendFile(path.join(__dirname, "../views/memePage.handlebars"));
+  });
 
+  app.get("/memespage", function(req, res) {
+    res.render('meme');
     // res.sendFile(path.join(__dirname, "../views/index.handlebars"));
     // res.sendFile(path.join(__dirname, "../views/memePage.handlebars"));
   });
