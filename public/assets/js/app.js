@@ -82,17 +82,6 @@ function init() {
 
     reader.readAsDataURL(imageInput.files[0]);
   });
-
-  $(".meme-it").on("click", function () {
-    const newMeme = {
-      //takes meme text from client, text box
-      userInput: " ",
-      // autofill /tag for user with the img input for the image chosen.
-      imageName: $(this).attr("data-img"),
-    };
-    alert("Clicked");
-    $.post("/api/memes", newMeme, (data) => {});
-  });
 }
 
 init();
