@@ -15,7 +15,7 @@
 /* Styling for Background Image */
 html,
 .parallax {
-  background-image: url("assets/images/newbg.png");
+  background-image: url("/assets/images/newbg.png");
   background-color: #252525;
   height: 100%;
   background-attachment: fixed;
