@@ -12,7 +12,7 @@
 <!-- Header End -->
 
 <!-- Start of Meme Creator -->
-<div id="meme-generator" class="container mt-3 meme-generator">
+<div id="meme-generator" class="container mt-3 meme-generator2">
     <div class="row">
         <div class="col-sm-6">
             <div class="row align-items-center">
@@ -51,7 +51,7 @@
         <div class="col-sm-6">
             <!--Nested rows within a column-->
             <div class="row">
-                <div class="col-12">
+                <div id="step-4-col" class="col-12">
                     <h2 id="step-4" class="h2-instructions">Step 4: Edit &amp; Download Your Meme</h2>
                     <div id="step-4-instructions">
                         <p>To edit the text on your meme image after it has already been generated, use
@@ -72,29 +72,7 @@
     </div>
 </div>
 <!-- End of Meme Creator -->
-{{#each meme}}
-<!-- Thumbnail 1 -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="{{imageName}}"
-                            data-img-id="{{this.imageName}}" />
 
-                        <div class="card-body">
-                            <h2 class="card-text">{{userInput}}
-                            </h2>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary meme-it"
-                                        data-img="{{imageName}}"
-                                        data-type={{this.id}}>Download Meme
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-{{/each}}
 <!-- Start of Footer -->
 <footer class="container">
     <p class="float-end footer2">
