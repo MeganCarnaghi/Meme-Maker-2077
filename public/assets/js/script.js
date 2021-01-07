@@ -14,7 +14,7 @@ $(function () {
     console.log($(this).attr("data-img"));
   });
 
-  $("#generate-btn-1").on("click", function () {
+  $("#generate-btn-1").on("click", function (event) {
     event.preventDefault();
     const newMeme = {
       //takes meme text from client, text box
@@ -24,14 +24,5 @@ $(function () {
     };
     // alert("Clicked");
     $.post("/api/memes", newMeme, (data) => {});
-    window.location.reload();
   });
-  /*const newMeme = {
-//takes meme text from client, text box
-userInput: " ",
-// autofill /tag for user with the img input for the image chosen.
-imageName: $(this).attr("data-img"),
-};
-alert("Clicked");
-$.post("/api/memes", newMeme, (data) => {});*/
 });
