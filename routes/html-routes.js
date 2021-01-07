@@ -1,7 +1,7 @@
 // *********************************************************************************
 // html-routes.js - this file offers a set of routes for sending users to the various html pages
 // *********************************************************************************
-
+const db = require("../models")
 // Dependencies
 // =============================================================
 var path = require("path");
@@ -16,7 +16,12 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.render('index');
+    db.Meme.findAll().then(function(results){
+      console.log(results)
+      res.render('index', {Memes:results});
+    })
+
+
     // res.sendFile(path.join(__dirname, "../views/index.handlebars"));
     // res.sendFile(path.join(__dirname, "../views/memePage.handlebars"));
   });
