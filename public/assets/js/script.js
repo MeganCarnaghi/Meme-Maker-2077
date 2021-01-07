@@ -24,7 +24,7 @@ $(function () {
     };
     // alert("Clicked");
     $.post("/api/memes", newMeme, (data) => {});
-    location.reload();
+    window.location.reload();
   });
   /*const newMeme = {
 //takes meme text from client, text box
