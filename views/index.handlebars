@@ -1,25 +1,32 @@
 <div class="parallax">
 
     <!-- Header Start -->
-    <header class="py-5 text-center container">
+    <header class="py-3 text-center container">
         <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto header">
+            <div class="col-lg-8 col-md-10 mx-auto header">
                 <img class="logo-img" src="/assets/images/newlogo.png" alt="logo" />
-                <p class="heading-text">Select an image from below to get started or click the Meme Maker button to
-                    upload your own
-                    image and create your meme.</p>
-                <button id="memeMakerBtn" type="button" class="btn" onclick="location.href='/memespage'">Meme
-                    Maker</button>
-            </div>
-        </div>
+                <div class="card-instructions">
+                    <p class="heading-text">Click Meme-It Below to Get Started.
+                    </p>
+                    <button id="memeStart" type="button" class="btn" onclick="location.href='#row1'">START</button>
+                    <p class="heading-text">View the Meme Library for Inspiration.
+                    </p>
+                    <button id="memeLibrary" type="button" class="btn"
+                        onclick="location.href='#meme-library'">MEME-IFY</button>
+                    <p class="heading-text">Upload Your Own Image and Create a Meme.
+                    </p>
+                    <button id="memeMakerBtn" type="button" class="btn" onclick="location.href='/memespage'">MEME
+                        MAKER</button>
+                </div>
     </header>
     <!-- Header End -->
 
     <!-- Thumbnails for the Modals -->
     <div class="album py-5">
+
         <div class="container">
 
-            <div class="row">
+            <div id="row1" class="row">
                 <!-- Thumbnail 1 -->
                 <div class="col-sm-4">
                     <div class="card shadow-sm">
@@ -623,64 +630,75 @@
                 </div>
                 <!-- End of Modals -->
 
-                <!-- Start of Meme Creator -->
-                <div id="meme-generator" class="container mt-3 meme-generator1">
-                    <div class="row align-items-start">
-                        <div id="col1" class="col">
-                            <h2 class="h2-instructions">Step 1: Select an Image</h2>
+                <!-- Start of second logo -->
+                <div class="py-5 text-center container">
+                    <div class="row py-lg-5">
+                        <div class="col-lg-8 col-md-10 mx-auto header">
+                            <img id="meme-library" src="assets/images/MEMIFY.png" alt="meme library">
+                        </div>
 
-                            <div>
-                                <p class="step-1-instructions">Choose an image from the options above and
-                                    click the "Meme It" button.</p>
-                            </div>
-                            <div>
-                                <p class="step-1-instructions">You have selected the following image:</p>
-                                <textarea id="choice" placeholder="No Image Selected" readonly></textarea>
-                            </div>
-                        </div>
-                        <div id="col2" class="col">
-                            <h2 class="h2-instructions">Step 2: Add Your Text</h2>
-                            <div>
-                                <p class="step-2-instructions">Type your meme text in the box below. The text will
-                                    appear at the bottom of the meme. Use the toggle to adjust the text size.</p>
-                            </div>
-                            <textarea id="bottom">Bottom Text</textarea>
-                            <div class="text-size">Text Size:
-                                <input type="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15"
-                                    step="0.01" /> </div>
-                        </div>
-                        <div id="col3" class="col">
-                            <h2 class="h2-instructions">Step 3: Create Your Meme</h2>
-                            <div>
-                                <p class="step-3-instructions">Click the "Generate Meme" button to create your meme. It
-                                    will appear in the meme library below.</p>
-                            </div>
-                            <button class="btn btn-primary" id="generate-btn-1">Generate Meme</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Meme Creator -->
-                <!-- Card Meme Display-->
-                {{#each Memes}}
-                <!-- Thumbnail 1 -->
-                <div class="col-sm-4">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%" height="225"
-                            src="{{dataValues.imageName}}" data-img-id="{{dataValues.imageName}}" />
+                        <!-- Start of Meme Creator -->
+                        <div id="meme-generator" class="container mt-3 meme-generator1">
+                            <div class="row align-items-start">
+                                <div id=" col1" class="col">
+                                    <h2 class="h2-instructions">Step 1: Select an Image</h2>
 
-                        <div class="card-body">
-                            <h2 class="card-text">{{dataValues.userInput}}
-                            </h2>
+                                    <div>
+                                        <p class="step-1-instructions">Choose an image from the options above and
+                                            click the "Meme It" button.</p>
+                                    </div>
+                                    <div>
+                                        <p class="step-1-instructions">You have selected the following image:</p>
+                                        <textarea id="choice" placeholder="No Image Selected" readonly></textarea>
+                                    </div>
+                                </div>
+                                <div id="col2" class="col">
+                                    <h2 class="h2-instructions">Step 2: Add Your Text</h2>
+                                    <div>
+                                        <p class="step-2-instructions">Type your meme text in the box below. The text
+                                            will
+                                            appear at the bottom of the meme. Use the toggle to adjust the text size.
+                                        </p>
+                                    </div>
+                                    <textarea id="bottom2">Bottom Text</textarea>
+                                    <div class="text-size">Text Size:
+                                        <input type="range" id="bottom-text-size-input" min="0.05" max="0.25"
+                                            value="0.15" step="0.01" /> </div>
+                                </div>
+                                <div id="col3" class="col">
+                                    <h2 class="h2-instructions">Step 3: Create Your Meme</h2>
+                                    <div>
+                                        <p class="step-3-instructions">Click the "Generate Meme" button to create your
+                                            meme. It
+                                            will appear in the meme library below.</p>
+                                    </div>
+                                    <button class="btn btn-primary" id="generate-btn-1">Generate Meme</button>
+                                </div>
+                            </div>
                         </div>
+                        <!-- End of Meme Creator -->
+                        <!-- Card Meme Display-->
+                        {{#each Memes}}
+                        <!-- Thumbnail 1 -->
+                        <div class="col-sm-4">
+                            <div class="card shadow-sm">
+                                <img class="bd-placeholder-img card-img-top img-fit-horizontal" width="100%"
+                                    height="225" src="{{dataValues.imageName}}"
+                                    data-img-id="{{dataValues.imageName}}" />
+
+                                <div class="card-body">
+                                    <h2 class="card-text">{{dataValues.userInput}}
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <!--TEST END-->
+                        <!-- Start of Footer -->
+                        <footer class="container">
+                            <p class="float-end mb-1">
+                                <a class="top" href="#">Back to top</a>
+                            </p>
+                        </footer>
+                        <!-- End of Footer -->
                     </div>
-                </div>
-                {{/each}}
-                <!--TEST END-->
-                <!-- Start of Footer -->
-                <footer class="container">
-                    <p class="float-end mb-1">
-                        <a class="top" href="#">Back to top</a>
-                    </p>
-                </footer>
-                <!-- End of Footer -->
-            </div>

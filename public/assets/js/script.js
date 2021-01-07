@@ -15,14 +15,16 @@ $(function () {
   });
 
   $("#generate-btn-1").on("click", function () {
+    event.preventDefault();
     const newMeme = {
       //takes meme text from client, text box
-      userInput: $("#bottom").val().trim(),
+      userInput: $("#bottom2").val().trim(),
       // autofill /tag for user with the img input for the image chosen.
       imageName: $("#choice").val().trim(),
     };
     // alert("Clicked");
     $.post("/api/memes", newMeme, (data) => {});
+    location.reload();
   });
   /*const newMeme = {
 //takes meme text from client, text box
