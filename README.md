@@ -35,11 +35,13 @@ SO THAT I can create my own meme and download it for saving and sharing
 - JAWSDB
 - Heroku
 - Cloudinary
-- Canvas API
+- HTML5 Canvas
 - Repl.it
 - fileReader.js
 - Body-Parser
 - Travis CI
+- Postman
+- GitKraken
 
 ## Links and Screenshots
 
