@@ -24,6 +24,7 @@ SO THAT I can create my own meme and download it for saving and sharing
 
 - HTML
 - CSS
+- Bootstrap
 - JavaScript
 - Node.js
 - Express
@@ -31,7 +32,14 @@ SO THAT I can create my own meme and download it for saving and sharing
 - Sequelize
 - MySQL
 - MySQL2
+- JAWSDB
+- Heroku
+- Cloudinary
 - Canvas API
+- Repl.it
+- fileReader.js
+- Body-Parser
+- Travis CI
 
 ## Links and Screenshots
 
