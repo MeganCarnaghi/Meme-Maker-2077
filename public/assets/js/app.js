@@ -3,9 +3,17 @@ document.getElementById("img-input").onchange = function () {
   document.getElementById("choose-file").value = this.value;
 };
 
-let topTextInput, topTextSizeInput, imageInput, generateBtn2, canvas, ctx;
+//start here
+let topTextInput,
+  bottomTextInput,
+  topTextSizeInput,
+  bottomTextSizeInput,
+  imageInput,
+  generateBtn2,
+  canvas,
+  ctx;
 
-function generateMeme(img, bottomText, bottomTextSize) {
+function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
   let fontSize;
 
   // Size canvas to image
@@ -21,6 +29,23 @@ function generateMeme(img, bottomText, bottomTextSize) {
   ctx.fillStyle = "white";
   ctx.strokeStyle = "black";
   ctx.textAlign = "center";
+
+  // Top text font size
+  fontSize = canvas.width * topTextSize;
+  ctx.font = fontSize + "px Impact";
+  ctx.lineWidth = fontSize / 20;
+
+  // Draw top text
+  ctx.textBaseline = "top";
+  topText.split("\n").forEach(function (t, i) {
+    ctx.fillText(t.toUpperCase(), canvas.width / 2, i * fontSize, canvas.width);
+    ctx.strokeText(
+      t.toUpperCase(),
+      canvas.width / 2,
+      i * fontSize,
+      canvas.width
+    );
+  });
 
   // Bottom text font size
   fontSize = canvas.width * bottomTextSize;
@@ -50,7 +75,9 @@ function generateMeme(img, bottomText, bottomTextSize) {
 }
 
 function init() {
+  topTextInput = document.getElementById("top");
   bottomTextInput = document.getElementById("bottom");
+  topTextSizeInput = document.getElementById("top-text-size-input");
   bottomTextSizeInput = document.getElementById("bottom-text-size-input");
   imageInput = document.getElementById("img-input");
   generateBtn2 = document.getElementById("generate-btn-2");
@@ -76,7 +103,13 @@ function init() {
 
       // call the generate meme function to add the image and input text from user
       img.onload = () => {
-        generateMeme(img, bottomTextInput.value, bottomTextSizeInput.value);
+        generateMeme(
+          img,
+          topTextInput.value,
+          bottomTextInput.value,
+          topTextSizeInput.value,
+          bottomTextSizeInput.value
+        );
       };
     };
 
@@ -85,6 +118,8 @@ function init() {
 }
 
 init();
+
+// end here
 
 //Function to convert the canvas file to a png file and download it
 // Download is triggered when "Download" button in step 4 is clicked

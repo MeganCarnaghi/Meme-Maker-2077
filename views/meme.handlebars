@@ -1,10 +1,12 @@
 <!-- Header Start -->
-<header class="py-5 text-center container">
+<header class="py-3 text-center container">
     <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto header">
+        <div class="col-lg-8 col-md-10 mx-auto header">
             <img class="logo-img" src="/assets/images/newlogo.png" alt="logo" />
-            <p class="heading-text">Follow the steps below to create your meme.</p>
-            <button id="goHomeBtn" type="button" class="btn" onclick="location.href='/'">Home</button>
+            <div class="card-instructions">
+                <p class="heading-text">Follow the steps below to create your meme.</p>
+                <button id="goHomeBtn" type="button" class="btn" onclick="location.href='/'">HOME</button>
+            </div>
         </div>
     </div>
 </header>
@@ -32,9 +34,13 @@
                     <div class="instructions">
                         <h2 class="h2-instructions">Step 2: Add Your Text</h2>
                         <div>
-                            <p class="step-2-instructions">Type your meme text in the box below. The text will appear on
-                                the bottom of the meme. Use the toggle to adjust the text size.</p>
+                            <p class="step-2-instructions">Type your meme text in the boxes below. Use the toggles to
+                                adjust the text size.</p>
                         </div>
+                        <textarea id="top">Top Text</textarea>
+                        <div class="text-size">Text Size:
+                            <input type="range" id="top-text-size-input" min="0.05" max="0.25" value="0.15"
+                                step="0.01" /> </div>
                         <textarea id="bottom">Bottom Text</textarea>
                         <div class="text-size">Text Size:
                             <input type="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15"
@@ -57,8 +63,8 @@
                 <div id="step-4-col" class="col-12">
                     <h2 id="step-4" class="h2-instructions">Step 4: Edit &amp; Download Your Meme</h2>
                     <div id="step-4-instructions">
-                        <p>To edit the text on your meme image after it has already been generated, use
-                            the text box and toggle in step 2. Then, click the "Generate Meme" button
+                        <p>To edit the text on your meme after it has already been generated, use
+                            the text boxes and toggles in step 2. Then, click the "Generate Meme" button
                             in step 3 to update your meme.</p>
                     </div>
                     <div id="meme-div">

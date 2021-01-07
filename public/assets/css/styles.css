@@ -30,13 +30,19 @@ body,
   width: 100%;
 }
 
+#meme-library {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
 /* Styling for Instructions on index.html*/
 .heading-text {
   color: #fefefe;
   font-family: "Oswald", sans-serif;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 400;
   text-shadow: 2px 2px #4c58a7;
+  width: 100%;
 }
 
 /* Meme Title Font on Meme Thumbnails */
@@ -74,19 +80,68 @@ h5 {
   color: #2fd3cb;
 }
 
+/* Styling for the instructions card on index.html */
+.card-instructions {
+  background-color: rgba(37, 37, 37, 0.2);
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
 /* Meme Maker Button on index.html*/
 #memeMakerBtn {
+  text-decoration: none;
+  color: white;
+  background-color: #2fd3cb;
+  border: 1px solid #fefefe;
+  font-family: "VT323", monospace;
+  font-size: 32px;
+  width: 200px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+#memeMakerBtn:hover {
+  background-color: #fefefe;
+  border: 1px solid #2fd3cb;
+  color: #2fd3cb;
+}
+
+/* Meme Library on index.html*/
+#memeLibrary {
+  text-decoration: none;
+  color: white;
+  background-color: #f178ab;
+  border: 1px solid #fefefe;
+  font-family: "VT323", monospace;
+  font-size: 32px;
+  width: 200px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#memeLibrary:hover {
+  background-color: #fefefe;
+  border: 1px solid #f178ab;
+  color: #f178ab;
+}
+
+/* Meme Start on index.html*/
+#memeStart {
   text-decoration: none;
   color: white;
   background-color: #e15e43;
   border: 1px solid #fefefe;
   font-family: "VT323", monospace;
-  font-size: 40px;
+  font-size: 32px;
   width: 200px;
   margin-top: 15px;
+  margin-bottom: 20px;
 }
 
-#memeMakerBtn:hover {
+#memeStart:hover {
   background-color: #fefefe;
   border: 1px solid #e15e43;
   color: #e15e43;
@@ -102,6 +157,7 @@ h5 {
   font-size: 40px;
   width: 200px;
   margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 #goHomeBtn:hover {
@@ -148,9 +204,10 @@ h5 {
 .meme-generator1 {
   background-color: #4c58a7;
   padding: 30px 30px;
-  margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 8px 4px #e15e43;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 
 /* Styling for Div Container on memepage.html */
@@ -199,8 +256,17 @@ h5 {
   color: #252525;
 }
 
-/* Styling for Text Boxes in Step 2 */
-#bottom {
+/* Styling for Text Boxes in Step 2 on memepage.html */
+#bottom,
+#top {
+  color: #7a7a7a;
+  width: 90%;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* Styling for Text Boxes in Step 2 on index.html */
+#bottom2 {
   color: #7a7a7a;
   width: 100%;
   margin-bottom: 10px;
@@ -212,8 +278,8 @@ h5 {
   font-size: 18px;
 }
 
-#bottom-text-size-input {
-  margin-bottom: 10px;
+#top-text-size-input {
+  margin-bottom: 30px;
 }
 
 /* Styling for Generate Meme Button in Step 3 */
